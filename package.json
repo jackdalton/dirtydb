@@ -1,0 +1,28 @@
+{
+  "name": "dirtydb",
+  "version": "1.0.0",
+  "description": "A JSON file reading and writing utility.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackdalton/dirtydb.git"
+  },
+  "keywords": [
+    "dirtydb",
+    "dirty",
+    "db",
+    "json"
+  ],
+  "author": "Jack Dalton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackdalton/dirtydb/issues"
+  },
+  "homepage": "https://github.com/jackdalton/dirtydb#readme",
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  }
+}

@@ -4,7 +4,7 @@ const fs = require("fs");
 
 describe("DirtyDB", function() {
     fs.writeFileSync("test/test1.json", fs.readFileSync("test/test.json"));
-    let dirtyInstance = new DirtyDB("test/test1.json");
+    const dirtyInstance = new DirtyDB("test/test1.json");
     let mc_local = 0;
     let mc = 0;
     dirtyInstance.onChange(function() {

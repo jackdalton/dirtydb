@@ -21,9 +21,11 @@ module.exports = (function() {
         fs.writeFileSync(filePath, JSON.stringify(db));
     }
 
-    DirtyDB.prototype.read = function() {
+    DirtyDB.prototype.read = function(key) {
+        let sym = Symbol();
+        key = key || sym;
         forceUpdate();
-        return db;
+        return key == sym ? db : db[key];
     };
 
     DirtyDB.prototype.write = function(data) {

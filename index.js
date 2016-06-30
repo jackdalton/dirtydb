@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 module.exports = (function() {
-    let db, filePath;
+    let db, filePath, onChange;
     function DirtyDB(path) {
         filePath = path;
         fs.access(filePath, fs.F_OK, function(err) {
@@ -31,7 +31,12 @@ module.exports = (function() {
     DirtyDB.prototype.write = function(data) {
         db = data;
         writeDB();
+        onChange(db);
         return db;
+    };
+
+    DirtyDB.prototype.onChange = function(fn) {
+        onChange = fn;
     };
 
     return DirtyDB;

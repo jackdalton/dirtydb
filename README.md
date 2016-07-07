@@ -44,3 +44,13 @@ let customData = instance.read();
 customData.languages.push("Dart");
 instance.write(customData); // the JSON file is modified to include "Dart" in the "languages" array.
 ```
+
+### Data manipulation
+
+#### `.forEach`
+
+The `forEach` method takes a function as a single parameter. That function is then called with the following arguments:
+
+```javascript
+instance.forEach(function(value, key, db) {});
+```

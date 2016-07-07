@@ -1,6 +1,6 @@
 {
   "name": "dirtydb",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A JSON file reading and writing utility.",
   "main": "index.js",
   "scripts": {

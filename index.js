@@ -39,5 +39,13 @@ module.exports = (function() {
         onChange = fn;
     };
 
+    DirtyDB.prototype.forEach = function(fn, thisArg) {
+        thisArg = thisArg || null;
+        forceUpdate();
+        for (let i in db) {
+            fn.call(thisArg, db[i], i, db);
+        }
+    };
+
     return DirtyDB;
 })();

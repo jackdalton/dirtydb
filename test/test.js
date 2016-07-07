@@ -20,6 +20,18 @@ describe("DirtyDB", function() {
         dirtyInstance.write(customData);
         mc_local++;
         assert.equal(customData.a, dirtyInstance.read("a"));
+    });
+    it("should properly execute forEach", function() {
+        let arr = [];
+        dirtyInstance.forEach(function(v, i) {
+            arr.push(i);
+        });
+        assert.deepEqual(["a", "b"], arr); // NOTE: deepEqual because we're comparing arrays.
+        let obj = {};
+        dirtyInstance.forEach(function(v, i) {
+            obj[i] = v;
+        });
+        assert.deepEqual(dirtyInstance.read(), obj); // NOTE: deepEqual because we're comparing objects.
         fs.unlinkSync("test/test1.json");
     });
     it("should properly count modifications to the database", function() {

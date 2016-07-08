@@ -1,4 +1,4 @@
-# DirtyDB
+# DirtyDB [![Build Status](https://travis-ci.org/jackdalton/dirtydb.svg?branch=master)](https://travis-ci.org/jackdalton/dirtydb)
 
 A JSON file reading and writing utility.
 
